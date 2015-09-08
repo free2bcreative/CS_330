@@ -8,6 +8,7 @@ Aggregates (arrays, objects, etc)
     
 ; defining a type of struct in Racket
 (define-struct student (name major gpa))
+(define-struct faculty (name department))
 
 ; contructor
 (define bob 
@@ -18,3 +19,35 @@ Aggregates (arrays, objects, etc)
   
 ; should return true
 (student? bob)
+
+; should return false
+(faculty? bob)
+
+
+; bob.name or alice.major
+(student-name bob)
+(student-major alice)
+
+(define (student-or-faculty p)
+  (or (student? p) (faculty? p)))
+  
+; is-CS? : (or student faculty) -> boolean
+; tests to see if a student or faculty member is in the CS department
+
+(define (is-CS? p)
+  (cond [(student? p) (string=? (student-major p) "CS")]
+    [(faculty? p) (string=? (faculty-department p) "CS")]
+    {else false]))
+    
+; data for tests
+(define bob 
+  (make-student "Bob" "Music" 3.2))
+  
+(define alice 
+  (make-student "Alice" "CS" 3.9))
+    
+; student not in CS
+(check-expect (is-CS? bob) false)
+
+; student in CS
+(check-expect (is-CS? alice) true)
