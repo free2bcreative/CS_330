@@ -1,0 +1,20 @@
+Scalars (primitives)
+Aggregates (arrays, objects, etc)
+  How do you access them?
+    By name or position (arrays are accessed by position)
+  Mixed?
+    homogeneous
+    heterogeneous (structs in Racket and C++)
+    
+; defining a type of struct in Racket
+(define-struct student (name major gpa))
+
+; contructor
+(define bob 
+  (make-student "Bob" "CS" 3.2))
+  
+(define alice 
+  (make-student "Alice" "CS" 3.9))
+  
+; should return true
+(student? bob)
