@@ -1,6 +1,8 @@
 ; example of what we will be turning in for the projects - including the comments
 ; include the following:  contract statements, return, code, comments on the tests, and the tests
 
+; Student-Name
+
 
 ; sign: number -> number
 ; returns the sign (-1, 0, 1) of the input
