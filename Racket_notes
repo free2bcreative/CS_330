@@ -1,0 +1,17 @@
+; example of what we will be turning in for the projects.
+; sign: number -> number
+; returns the sign (-1, 0, 1) of the input
+
+(define (sign n)
+  (cond [(positive? n) 1]
+    [(negative? n) -1]
+    [else 0]))
+  
+; positive
+(check-expect (sign 10) 1)
+
+; negative
+(check-expect (sign -10) -1)
+
+; zero
+(check-expect (sign 0) 0)
