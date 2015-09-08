@@ -1,0 +1,7 @@
+(define (inc x)
+  (+ x 1))
+
+; should return 4  
+(inc 3)
+
+; think of it just substituting the function inline.
